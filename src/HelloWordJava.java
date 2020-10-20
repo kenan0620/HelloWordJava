@@ -60,6 +60,9 @@ public class HelloWordJava {
         
         var hello = new HelloWordJava();
         System.out.println(hello.toString());
+        
+        int d = m << 3;
+        System.out.println(d);
 	}
 
 }
