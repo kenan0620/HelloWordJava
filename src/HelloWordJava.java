@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /**
  * 开始练习JAVA
@@ -63,6 +64,34 @@ public class HelloWordJava {
         
         int d = m << 3;
         System.out.println(d);
+        
+        double p = 1.0 / 10;
+        double o = 1 - 9.0 / 10;
+        System.out.println(p);
+        System.out.println(o);
+        
+        double value = Math.abs(p - o);
+        if (value < 0.0001) {
+        	System.out.println("值是相等的");
+        }else {
+        	System.out.println("不相等");
+        }
+        
+        System.out.println("组合一下" + p + o + "!");
+        
+        String s = "hello";
+        System.out.println(s); // 显示 hello
+        s += " world";
+        System.out.println(s); // 显示 world
+        
+        int[] arr = new int[5];
+        arr[0] = 68;
+        arr[1] = 79;
+        arr[2] = 91;
+        arr[3] = 85;
+        arr[4] = 62;
+        System.out.println(Arrays.toString(arr));
+
 	}
 
 }
