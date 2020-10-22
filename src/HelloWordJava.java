@@ -15,6 +15,22 @@ public class HelloWordJava {
 		 * 
 		 * */
 		System.out.println("HelloWordJava!");
+		
+		/// 经典冒泡排序
+		int[] maopaoArr = {28, 12, 89, 73, 65, 18, 96, 50, 8, 36};
+		System.out.println(Arrays.toString(maopaoArr));
+		
+		for (int i = 0; i < maopaoArr.length - 1; i++) {
+			for (int j = 0; j < maopaoArr.length - 1 - i; j++) {
+				if (maopaoArr[j] > maopaoArr[j + 1]) {
+					int tmp = maopaoArr[j];
+					maopaoArr[j] = maopaoArr[j + 1];
+					maopaoArr[j + 1] = tmp;
+				} 
+			}
+		}
+		
+		System.out.println(Arrays.toString(maopaoArr));
 
 		int x = 100;
 		System.out.println(x);
