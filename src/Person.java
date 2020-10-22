@@ -48,9 +48,13 @@ public class Person {
 		this.name  = name;
 		this.age = age;
 	}
-	
+	 // 调用另一个构造方法Person(String)
 	public Person() {
-		
+		this("no");
+	}
+	// 调用另一个构造方法Person(String, int)
+	public Person(String name) {
+		this(name, 18);
 	}
 
 }

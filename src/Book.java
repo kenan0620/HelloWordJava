@@ -9,7 +9,7 @@ public class Book {
 	// 价格
 	public double price;
 	
-	private void test() {
+	private void tesBook() {
 		// TODO Auto-generated method stub
 
 		Book book = new Book();
