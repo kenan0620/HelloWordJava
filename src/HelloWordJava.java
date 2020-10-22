@@ -19,6 +19,8 @@ public class HelloWordJava {
 		/// 经典冒泡排序
 		int[] maopaoArr = {28, 12, 89, 73, 65, 18, 96, 50, 8, 36};
 		System.out.println(Arrays.toString(maopaoArr));
+		Arrays.sort(maopaoArr);
+		System.out.println(Arrays.toString(maopaoArr));
 		
 		for (int i = 0; i < maopaoArr.length - 1; i++) {
 			for (int j = 0; j < maopaoArr.length - 1 - i; j++) {
@@ -28,6 +30,14 @@ public class HelloWordJava {
 					maopaoArr[j + 1] = tmp;
 				} 
 			}
+		}
+		
+		System.out.println(Arrays.toString(maopaoArr));
+		
+		for (int i = 0; i < maopaoArr.length / 2; i++) {
+			int tmp = maopaoArr[i];
+			maopaoArr[i] = maopaoArr[maopaoArr.length - i - 1];
+			maopaoArr[maopaoArr.length - i - 1] = tmp;
 		}
 		
 		System.out.println(Arrays.toString(maopaoArr));
