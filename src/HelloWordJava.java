@@ -17,11 +17,19 @@ public class HelloWordJava {
 		System.out.println("HelloWordJava!");
 
 		Person mingPerson = new Person();
-		mingPerson.name = "小明";
-		mingPerson.age = 24;
-		System.out.println(mingPerson.name);
+		String nameString  = "小明";
+		mingPerson.setName(nameString);
+		mingPerson.setAge(24);
+		System.out.println(mingPerson.getName());
+
+		nameString = "小白菜";
+				
+		mingPerson.setNames("小红","小蓝","熊白");
+		System.out.println(mingPerson.getName());
 
 		System.out.println(Arrays.toString(args));
+		
+		Person person = new Person("小李", 53);
 
 		/// 经典冒泡排序
 		int[] maopaoArr = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
