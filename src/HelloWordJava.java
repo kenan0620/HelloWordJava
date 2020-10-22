@@ -15,31 +15,38 @@ public class HelloWordJava {
 		 * 
 		 * */
 		System.out.println("HelloWordJava!");
-		
+
+		Person mingPerson = new Person();
+		mingPerson.name = "小明";
+		mingPerson.age = 24;
+		System.out.println(mingPerson.name);
+
+		System.out.println(Arrays.toString(args));
+
 		/// 经典冒泡排序
-		int[] maopaoArr = {28, 12, 89, 73, 65, 18, 96, 50, 8, 36};
+		int[] maopaoArr = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
 		System.out.println(Arrays.toString(maopaoArr));
 		Arrays.sort(maopaoArr);
 		System.out.println(Arrays.toString(maopaoArr));
-		
+
 		for (int i = 0; i < maopaoArr.length - 1; i++) {
 			for (int j = 0; j < maopaoArr.length - 1 - i; j++) {
 				if (maopaoArr[j] > maopaoArr[j + 1]) {
 					int tmp = maopaoArr[j];
 					maopaoArr[j] = maopaoArr[j + 1];
 					maopaoArr[j + 1] = tmp;
-				} 
+				}
 			}
 		}
-		
+
 		System.out.println(Arrays.toString(maopaoArr));
-		
+
 		for (int i = 0; i < maopaoArr.length / 2; i++) {
 			int tmp = maopaoArr[i];
 			maopaoArr[i] = maopaoArr[maopaoArr.length - i - 1];
 			maopaoArr[maopaoArr.length - i - 1] = tmp;
 		}
-		
+
 		System.out.println(Arrays.toString(maopaoArr));
 
 		int x = 100;
