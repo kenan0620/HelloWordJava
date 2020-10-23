@@ -16,6 +16,9 @@ public class HelloWordJava {
 		 * */
 		System.out.println("HelloWordJava!");
 
+		Person studentPerson = new Student("学生名", 15, 20);
+		
+		System.out.println(studentPerson.name);
 		Person mingPerson = new Person();
 		String nameString  = "小明";
 		mingPerson.setName(nameString);

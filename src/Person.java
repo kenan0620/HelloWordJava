@@ -1,7 +1,7 @@
 
 public class Person {
-	private String name;
-	private int age;
+	protected String name;
+	protected int age;
 
 	private String[] names;
 	
@@ -57,4 +57,25 @@ public class Person {
 		this(name, 18);
 	}
 
+}
+
+class Student extends Person{
+	private int score;
+	
+	public int getScore() {
+		return score;
+	}
+	
+	public void setScore(int score) {
+		this.score = score;
+	}
+	
+	public String hello() {
+		return "Hello, " + super.name;
+	}
+	
+	public Student(String name, int age, int score) {
+		super();
+		this.score = score;
+	}
 }
