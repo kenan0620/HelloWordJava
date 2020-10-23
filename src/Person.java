@@ -1,4 +1,16 @@
 
+abstract class AbsPerson {
+	public abstract void run();
+}
+
+ class BNamePerson extends AbsPerson{
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+	System.out.println("跑起来");	
+	}
+}
+
 public class Person {
 	protected String name;
 	protected int age;
@@ -60,18 +72,37 @@ public class Person {
 	}
 
 	/*
-	 * 用final修饰的方法不能被Override： 用final修饰的类不能被继承：
+	 * 用final修饰的方法不能被Override：
 	 */
 	public final void custom() {
 
 	}
+
+	// 用final修饰的字段在初始化后不能被修改
+	public final String nickName = "Unamed";
+
+	public void learn() {
+		
+	}
+
 }
 
+// 用final修饰的类不能被继承：
 final class Teacher extends Person {
-
+	@Override
+	public void learn() {
+		// TODO Auto-generated method stub
+		System.out.println("老师的学习开始了");
+	}
 }
 
 class Student extends Person {
+	@Override
+	public void learn() {
+		// TODO Auto-generated method stub
+		System.out.println("学生的学习开始了");
+	}
+
 	private int score;
 
 	public int getScore() {
