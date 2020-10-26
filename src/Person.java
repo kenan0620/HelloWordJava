@@ -15,6 +15,8 @@ public class Person {
 	protected String name;
 	protected int age;
 
+	public static int number;
+	
 	private String[] names;
 
 	public String getName() {

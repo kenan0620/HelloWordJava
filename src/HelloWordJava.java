@@ -25,6 +25,11 @@ public class HelloWordJava {
 		mingPerson.setAge(24);
 		System.out.println(mingPerson.getName());
 
+		Person.number = 88;
+		System.out.println(Person.number);
+		Person.number = 99;
+		System.out.println(Person.number);
+
 		nameString = "小白菜";
 				
 		mingPerson.setNames("小红","小蓝","熊白");
