@@ -59,6 +59,13 @@ public class HelloWordJava {
         String s2 = "HELLO".toLowerCase();
         System.out.println(s1 == s2);
         System.out.println(s1.equals(s2));
+        //对两个Integer实例进行比较要特别注意：绝对不能用==比较，
+        //因为Integer是引用类型，必须使用equals()比较：
+
+
+        //把内部优化留给Integer的实现者去做，即使在当前版本没有优化，也有可能在下一个版本进行优化
+        Integer nu = Integer.valueOf(100);
+        System.out.println(nu);
         
 		/*
 		 * 上述定义的Outer是一个普通类，而Inner是一个Inner Class，它与普通类有个最大的不同，
