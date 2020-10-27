@@ -30,6 +30,11 @@ Java编译器最终编译出的.class文件只使用完整类名，因此，在�
 */
 import static java.lang.System.*;
 
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+
 /**
  * 在IDE中运行Java程序，IDE自动传入的-classpath参数是当前工程的bin目录和引入的jar包。
  * 不要把任何Java核心库添加到classpath中！JVM根本不依赖classpath加载核心库！
@@ -37,8 +42,17 @@ import static java.lang.System.*;
 
 public class HelloWordJava {
 	// Java入口程序规定的方法必须是静态方法，方法名必须为main，括号内的参数必须是String数组
-	static public void main(String[] args) {
+	
+	//使用Introspector.getBeanInfo()可以获取属性列表。
+	static public void main(String[] args) throws IntrospectionException {
 		
+		 BeanInfo info = Introspector.getBeanInfo(Person.class);
+	        for (PropertyDescriptor pd : info.getPropertyDescriptors()) {
+	            System.out.println(pd.getName());
+	            System.out.println("  " + pd.getReadMethod());
+	            System.out.println("  " + pd.getWriteMethod());
+	        }
+	        
 		
 		 String[] names = {"Bob", "Alice", "Grace"};
 	        var sj = new StringJoiner(", 柯南", "开始是", "结束是");
@@ -64,6 +78,7 @@ public class HelloWordJava {
 
 
         //把内部优化留给Integer的实现者去做，即使在当前版本没有优化，也有可能在下一个版本进行优化
+        // 创建新对象时，优先选用静态工厂方法而不是new操作符。
         Integer nu = Integer.valueOf(100);
         System.out.println(nu);
         
