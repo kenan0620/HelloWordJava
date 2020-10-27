@@ -35,6 +35,10 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 
+enum Weekday {
+    MON, TUE, WED, THU, FRI, SAT, SUN;
+}
+
 /**
  * 在IDE中运行Java程序，IDE自动传入的-classpath参数是当前工程的bin目录和引入的jar包。
  * 不要把任何Java核心库添加到classpath中！JVM根本不依赖classpath加载核心库！
