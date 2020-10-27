@@ -35,6 +35,9 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 enum Weekday {
     MON, TUE, WED, THU, FRI, SAT, SUN;
 }
@@ -49,6 +52,18 @@ public class HelloWordJava {
 	
 	//使用Introspector.getBeanInfo()可以获取属性列表。
 	static public void main(String[] args) throws IntrospectionException {
+		
+		 BigDecimal d1 = new BigDecimal("123.456789");
+	        BigDecimal d2 = d1.setScale(4, RoundingMode.HALF_UP); // 四舍五入，123.4568
+	        BigDecimal d3 = d1.setScale(4, RoundingMode.DOWN); // 直接截断，123.4567
+	        System.out.println(d2);
+	        System.out.println(d3);
+	        
+	        BigDecimal d11 = new BigDecimal("123.456");
+	        BigDecimal d21 = new BigDecimal("123.45600");
+	        System.out.println(d11.equals(d21)); // false,因为scale不同
+	        System.out.println(d11.equals(d21.stripTrailingZeros())); // true,因为d2去除尾部0后scale变为2
+	        System.out.println(d11.compareTo(d21)); // 0
 		
 		 BeanInfo info = Introspector.getBeanInfo(Person.class);
 	        for (PropertyDescriptor pd : info.getPropertyDescriptors()) {
