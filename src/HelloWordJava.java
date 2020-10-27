@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 import com.itranswarp.word.PersonPack;
 
+import home.Outer;
+
 /**
  * 开始练习JAVA
  * 
@@ -32,6 +34,15 @@ public class HelloWordJava {
 	// Java入口程序规定的方法必须是静态方法，方法名必须为main，括号内的参数必须是String数组
 	static public void main(String[] args) {
 		
+		/*
+		 * 上述定义的Outer是一个普通类，而Inner是一个Inner Class，它与普通类有个最大的不同，
+		 * 就是Inner Class的实例不能单独存在，必须依附于一个Outer Class的实例。*/
+		Outer outer = new Outer("Nested");
+		outer.asyncHello();
+		Outer.Inner inner = outer.new Inner(); 
+		inner.hello();
+		Outer.StaticNested sn = new Outer.StaticNested();
+		sn.hello();
 		PersonPack pack = new PersonPack();
 		pack.nameString = "新报了";
 		/*
