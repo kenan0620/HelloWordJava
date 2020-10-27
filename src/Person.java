@@ -3,11 +3,11 @@ abstract class AbsPerson {
 	public abstract void run();
 }
 
- class BNamePerson extends AbsPerson{
+class BNamePerson extends AbsPerson {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-	System.out.println("跑起来");	
+		System.out.println("跑起来");
 	}
 }
 
@@ -16,7 +16,14 @@ public class Person {
 	protected int age;
 
 	public static int number;
-	
+
+	public static void setNumber(int value) {
+		/**
+		 * 因为静态方法属于class而不属于实例， 因此，静态方法内部，无法访问this变量，也无法访问实例字段，它只能访问静态字段。
+		 */
+		number = value;
+	}
+
 	private String[] names;
 
 	public String getName() {
@@ -84,7 +91,7 @@ public class Person {
 	public final String nickName = "Unamed";
 
 	public void learn() {
-		
+
 	}
 
 }

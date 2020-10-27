@@ -9,10 +9,9 @@ public class Book {
 	// 价格
 	public double price;
 	
-	private void tesBook() {
+	private void btesBook() {
 		// TODO Auto-generated method stub
 
-		Book book = new Book();
 		
 	}
 }

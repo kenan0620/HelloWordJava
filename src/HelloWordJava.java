@@ -1,15 +1,39 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+import com.itranswarp.word.PersonPack;
+
 /**
  * 开始练习JAVA
  * 
  * @author conan
  */
 
+/*
+ * import static很少使用。
+
+Java编译器最终编译出的.class文件只使用完整类名，因此，在代码中，当编译器遇到一个class名称时：
+
+如果是完整类名，就直接根据完整类名查找这个class；
+
+如果是简单类名，按下面的顺序依次查找：
+
+查找当前package是否存在这个class；
+
+查找import的包是否包含这个class；
+
+查找java.lang包是否包含这个class。
+
+*/
+import static java.lang.System.*;
+
+
 public class HelloWordJava {
 	// Java入口程序规定的方法必须是静态方法，方法名必须为main，括号内的参数必须是String数组
 	static public void main(String[] args) {
+		
+		PersonPack pack = new PersonPack();
+		pack.nameString = "新报了";
 		/*
 		 * 
 		 * 
