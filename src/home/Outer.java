@@ -2,6 +2,13 @@ package home;
 
 //内部类（Nested Class）
 public class Outer {
+	
+	/**
+	 * 用static修饰的内部类和Inner Class有很大的不同，它不再依附于Outer的实例，
+	 * 而是一个完全独立的类，因此无法引用Outer.this，
+	 * 但它可以访问Outer的private静态字段和静态方法。
+	 * 如果把StaticNested移到Outer之外，就失去了访问private的权限。
+	 * */
 	private static String NAME = "OUTER";
 	public static class StaticNested {
 		public void hello() {

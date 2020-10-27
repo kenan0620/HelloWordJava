@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 import com.itranswarp.word.PersonPack;
 
@@ -29,11 +30,36 @@ Java编译器最终编译出的.class文件只使用完整类名，因此，在�
 */
 import static java.lang.System.*;
 
+/**
+ * 在IDE中运行Java程序，IDE自动传入的-classpath参数是当前工程的bin目录和引入的jar包。
+ * 不要把任何Java核心库添加到classpath中！JVM根本不依赖classpath加载核心库！
+ * */
 
 public class HelloWordJava {
 	// Java入口程序规定的方法必须是静态方法，方法名必须为main，括号内的参数必须是String数组
 	static public void main(String[] args) {
 		
+		
+		 String[] names = {"Bob", "Alice", "Grace"};
+	        var sj = new StringJoiner(", 柯南", "开始是", "结束是");
+	        for (String name : names) {
+	            System.out.println(sj.toString() + "1");
+
+	            sj.add(name);
+	            System.out.println(sj.toString() + "2");
+	        }
+	        System.out.println(sj.toString());
+		
+	        var s12 = String.join(", ", names);
+	        System.out.println(s12);
+
+		//两个字符串比较，必须总是使用equals()方法。
+		//要忽略大小写比较，使用equalsIgnoreCase()方法
+		String s1 = "hello";
+        String s2 = "HELLO".toLowerCase();
+        System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2));
+        
 		/*
 		 * 上述定义的Outer是一个普通类，而Inner是一个Inner Class，它与普通类有个最大的不同，
 		 * 就是Inner Class的实例不能单独存在，必须依附于一个Outer Class的实例。*/
