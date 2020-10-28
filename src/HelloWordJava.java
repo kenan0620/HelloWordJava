@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.StringJoiner;
 
+import com.itranswarp.sample.Main;
 import com.itranswarp.word.PersonPack;
 
 import home.Outer;
@@ -39,6 +40,12 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+
+
+
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Logger;
+
 
 enum Weekday {
     MON, TUE, WED, THU, FRI, SAT, SUN;
@@ -78,6 +85,19 @@ public class HelloWordJava {
 	
 	//使用Introspector.getBeanInfo()可以获取属性列表。
 	static public void main(String[] args) throws IntrospectionException {
+
+		Logger logger = Logger.getLogger(Main.class.getName());
+        logger.info("Start process...");
+        try {
+            "".getBytes("invalidCharsetName");
+        } catch (UnsupportedEncodingException e) {
+            // TODO: 使用logger.severe()打印异常
+        }
+        logger.info("Process end.");
+        
+		double xx = Math.abs(-123.45);
+	    assert xx >= 2220 : "xx must >= 2220";
+	    System.out.println(xx);
 		
 		Person3 p3 = new Person3();
         System.out.println(p3.address.city.toLowerCase());
