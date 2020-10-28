@@ -49,12 +49,45 @@ enum Weekday {
  * 不要把任何Java核心库添加到classpath中！JVM根本不依赖classpath加载核心库！
  * */
 
+
+class Person3 {
+    String[] name = new String[2];
+    Address address = new Address();
+}
+
+class Address {
+    String city;
+    String street;
+    String zipcode;
+}
+
 public class HelloWordJava {
+	 static void process1() {
+	        try {
+	            process2();
+	        } catch (NullPointerException e) {
+	            throw new IllegalArgumentException();
+	        }
+	    }
+
+	    static void process2() {
+	        throw new NullPointerException();
+	    }
+	    
 	// Java入口程序规定的方法必须是静态方法，方法名必须为main，括号内的参数必须是String数组
 	
 	//使用Introspector.getBeanInfo()可以获取属性列表。
 	static public void main(String[] args) throws IntrospectionException {
 		
+		Person3 p3 = new Person3();
+        System.out.println(p3.address.city.toLowerCase());
+        
+		 try {
+	            process1();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+		 
 		// 需要使用安全随机数的时候，必须使用SecureRandom，绝不能使用Random！
 		SecureRandom sRandom = null;
 		try {
