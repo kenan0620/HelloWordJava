@@ -55,13 +55,15 @@ public class HelloWordJava {
 	//使用Introspector.getBeanInfo()可以获取属性列表。
 	static public void main(String[] args) throws IntrospectionException {
 		
-		
+		// 需要使用安全随机数的时候，必须使用SecureRandom，绝不能使用Random！
 		SecureRandom sRandom = null;
 		try {
 			sRandom = SecureRandom.getInstanceStrong();
 			
 		} catch (NoSuchAlgorithmException  e) {
 			// TODO: handle exception
+			// 先记下来再说:
+	        e.printStackTrace();
 			sRandom = new SecureRandom();
 		}
 		
