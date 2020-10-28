@@ -37,6 +37,8 @@ import java.beans.PropertyDescriptor;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 
 enum Weekday {
     MON, TUE, WED, THU, FRI, SAT, SUN;
@@ -53,6 +55,22 @@ public class HelloWordJava {
 	//使用Introspector.getBeanInfo()可以获取属性列表。
 	static public void main(String[] args) throws IntrospectionException {
 		
+		
+		SecureRandom sRandom = null;
+		try {
+			sRandom = SecureRandom.getInstanceStrong();
+			
+		} catch (NoSuchAlgorithmException  e) {
+			// TODO: handle exception
+			sRandom = new SecureRandom();
+		}
+		
+		 byte[] buffer = new byte[16];
+		 sRandom.nextBytes(buffer); // 用安全随机数填充buffer
+	        System.out.println(Arrays.toString(buffer));
+		
+		Math.random();
+		System.out.println(Math.random());
 		 BigDecimal d1 = new BigDecimal("123.456789");
 	        BigDecimal d2 = d1.setScale(4, RoundingMode.HALF_UP); // 四舍五入，123.4568
 	        BigDecimal d3 = d1.setScale(4, RoundingMode.DOWN); // 直接截断，123.4567
@@ -63,6 +81,8 @@ public class HelloWordJava {
 	        BigDecimal d21 = new BigDecimal("123.45600");
 	        System.out.println(d11.equals(d21)); // false,因为scale不同
 	        System.out.println(d11.equals(d21.stripTrailingZeros())); // true,因为d2去除尾部0后scale变为2
+	        //必须使用compareTo()方法来比较，
+	        //它根据两个值的大小分别返回负数、正数和0，分别表示小于、大于和等于。
 	        System.out.println(d11.compareTo(d21)); // 0
 		
 		 BeanInfo info = Introspector.getBeanInfo(Person.class);
